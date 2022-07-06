@@ -13,8 +13,9 @@ export class ChatService {
 
   sendMessage(mensaje: String){
     const payload = {
-      de: 'Joel',
-      cuerpo: mensaje
+      de: 'Guadalupe',
+      cuerpo: mensaje,
+      color: 'blue'
     };
 
 
