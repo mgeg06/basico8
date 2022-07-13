@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+//import { resolve } from 'dns';
 import { Socket} from 'ngx-socket-io';
 import { Usuario } from '../classes/usuario';
 
@@ -38,14 +39,20 @@ export class WebsocketService {
   }
 
 
-  loginWs(nombre:string){
+  loginWS(nombre: String){
 
-    console.log('configurado:', nombre)
-    this.socket.emit('configurar-usuario',{nombre}, (resp:Response)=>{
+    return new Promise( ( resolve, reject) => {
+          //console.log('Configurando :', nombre);
+     this.emit('configurar-usuario',{nombre}, (resp:Response) =>{
+      //console.log(resp);
+      resolve(Promise);
+     });
+    }
+     /*this.socket.emit('configurar-usuario', {nombre}, (resp: Response) =>
+     {
       console.log(resp);
-    })
-
-  }
+     });*/
+  )}
 
 }
 
