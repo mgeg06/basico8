@@ -45,8 +45,7 @@ export class WebsocketService {
      this.emit('configurar-usuario',{nombre}, (resp:Response) =>{
       //console.log(resp);
 
-      //esta masrca error se debe quitarse las doble lineas 
-      //this.usuario = new Usuario(nombre);
+      this.usuario = new Usuario(nombre);
       this.guardarStorage();
       resolve();
      });
@@ -56,6 +55,7 @@ export class WebsocketService {
       console.log(resp);
      });*/
   )}
+
   getUsuario(){
     return this.usuario;
   }
@@ -68,6 +68,7 @@ export class WebsocketService {
     if(localStorage.getItem('usuario'))
     {
       this.usuario = JSON.parse(localStorage.getItem('usuario')!);
+      this.loginWS( this.usuario.nombre );
     }
   }
 

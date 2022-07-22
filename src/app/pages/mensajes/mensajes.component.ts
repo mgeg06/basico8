@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WebsocketService } from 'src/app/services/websocket.service';
+import { WebsocketService } from '../../services/websocket.service';
 
 @Component({
   selector: 'app-mensajes',
@@ -9,7 +9,7 @@ import { WebsocketService } from 'src/app/services/websocket.service';
 export class MensajesComponent implements OnInit {
 
   constructor(
-    public wsService:WebsocketService
+    public wsService: WebsocketService
   ) { }
 
   ngOnInit(): void {

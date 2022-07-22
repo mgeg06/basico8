@@ -7,22 +7,24 @@ import { WebsocketService } from './websocket.service';
 export class ChatService {
 
   constructor(
-    public wsService: WebsocketService
-  ) { }
+    public wsService: WebsocketService) { }
 
-
-  sendMessage(mensaje: String){
+  sendMessage(mensaje: string)
+  {
     const payload = {
-      de: 'Guadalupe',
+      de: this.wsService.getUsuario().nombre,
       cuerpo: mensaje,
-      color: 'blue'
+      color: 'aqua'
     };
-
 
     this.wsService.emit('mensaje', payload);
   }
-
-  getMessage(){
-    return this.wsService.listen('mensaje-nuevo');
+  getMessages(){
+   return this.wsService.listen('mensaje-nuevo');
   }
+
+  getMessagesPrivate(){
+    return this.wsService.listen('mensaje-privado')
+  }
+
 }
