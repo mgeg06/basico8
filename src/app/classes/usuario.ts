@@ -4,6 +4,6 @@ export class Usuario
 
     constructor( nombre: string)
     {
-        this.nombre = nombre;
+        this.nombre = nombre
     }
 }

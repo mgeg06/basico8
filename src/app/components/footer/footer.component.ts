@@ -6,10 +6,9 @@ import { WebsocketService } from '../../services/websocket.service';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent{
+export class FooterComponent {
 
-  constructor(
-    public wsService: WebsocketService
-  ) { }
+  constructor(public wsService: WebsocketService ) { }
 
+ 
 }

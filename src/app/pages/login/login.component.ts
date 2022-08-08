@@ -9,23 +9,22 @@ import { WebsocketService } from '../../services/websocket.service';
 })
 export class LoginComponent implements OnInit {
 
-  nombre ='';
+  nombre='';
 
-  constructor(public wsService: WebsocketService, private routers: Router) { }
+  constructor(
+    public wsService: WebsocketService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-  
   }
+
   ingresar(){
-// console.log(this.nombre);
-this.wsService.loginWS(this.nombre)
+    this.wsService.loginWS(this.nombre)
     .then( () => {
-
-      this.routers.navigateByUrl('/mensajes');
-
-
-    })
+      this.router.navigateByUrl('/mensajes');
+      
+    });
   }
 
 }
-

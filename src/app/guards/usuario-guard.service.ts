@@ -5,11 +5,11 @@ import { WebsocketService } from '../services/websocket.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioGuardService implements CanActivate {
+export class UsuarioGuardService implements CanActivate{
 
   constructor(
     public wsService: WebsocketService,
-    private router: Router
+    private Router: Router
   ) { }
 
   canActivate()
@@ -19,11 +19,10 @@ export class UsuarioGuardService implements CanActivate {
       return true;
     }
     else{
-      this.router.navigateByUrl('/');
-      return false;
+      this.Router.navigateByUrl('/');
+      return false; }
     }
-  
-  
-  
+    
   }
-}
+  
+
